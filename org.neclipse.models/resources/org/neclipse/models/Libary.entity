@@ -1,0 +1,6 @@
+namespace org.neclipse.models
+
+Entity Library {
+	name : string
+	book: Book
+}

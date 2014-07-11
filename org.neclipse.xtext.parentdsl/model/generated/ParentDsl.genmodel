@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.neclipse.xtext.parentdsl/src-gen" editDirectory="/org.neclipse.xtext.parentdsl.edit/src"
+    editorDirectory="/org.neclipse.xtext.parentdsl.editor/src" modelPluginID="org.neclipse.xtext.parentdsl"
+    forceOverwrite="true" modelName="ParentDsl" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="org.neclipse.xtext.parentdsl.edit"
+    editorPluginID="org.neclipse.xtext.parentdsl.editor" runtimeVersion="2.9">
+  <genPackages prefix="ParentDsl" basePackage="org.neclipse.xtext.parentdsl" disposableProviderFactory="true"
+      fileExtensions="parent" ecorePackage="ParentDsl.ecore#/">
+    <genClasses ecoreClass="ParentDsl.ecore#//NamespaceDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ParentDsl.ecore#//NamespaceDefinition/namespaceDeclaration"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ParentDsl.ecore#//NamespaceDefinition/importDeclaration"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ParentDsl.ecore#//NamespaceDefinition/artifact"/>
+    </genClasses>
+    <genClasses ecoreClass="ParentDsl.ecore#//NamespaceDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ParentDsl.ecore#//NamespaceDeclaration/name"/>
+    </genClasses>
+    <genClasses ecoreClass="ParentDsl.ecore#//ImportDeclaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ParentDsl.ecore#//ImportDeclaration/imports"/>
+    </genClasses>
+    <genClasses ecoreClass="ParentDsl.ecore#//Import">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ParentDsl.ecore#//Import/importedNamespace"/>
+    </genClasses>
+    <genClasses ecoreClass="ParentDsl.ecore#//Artifact">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ParentDsl.ecore#//Artifact/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
