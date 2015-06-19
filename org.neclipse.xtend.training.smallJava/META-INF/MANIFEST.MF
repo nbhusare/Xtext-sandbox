@@ -1,0 +1,36 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.neclipse.xtend.training.smallJava
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.neclipse.xtend.training.smallJava; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext;visibility:=reexport,
+ org.eclipse.xtext.xbase;resolution:=optional;visibility:=reexport,
+ org.eclipse.xtext.generator;resolution:=optional,
+ org.apache.commons.logging;bundle-version="1.0.4";resolution:=optional,
+ org.eclipse.emf.codegen.ecore;resolution:=optional,
+ org.eclipse.emf.mwe.utils;resolution:=optional,
+ org.eclipse.emf.mwe2.launch;resolution:=optional,
+ org.eclipse.xtext.util,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.common,
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types,
+ org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.neclipse.xtend.training.smallJava,
+ org.neclipse.xtend.training.smallJava.services,
+ org.neclipse.xtend.training.smallJava.smallJavaDsl,
+ org.neclipse.xtend.training.smallJava.smallJavaDsl.impl,
+ org.neclipse.xtend.training.smallJava.smallJavaDsl.util,
+ org.neclipse.xtend.training.smallJava.serializer,
+ org.neclipse.xtend.training.smallJava.parser.antlr,
+ org.neclipse.xtend.training.smallJava.parser.antlr.internal,
+ org.neclipse.xtend.training.smallJava.validation,
+ org.neclipse.xtend.training.smallJava.scoping,
+ org.neclipse.xtend.training.smallJava.generator,
+ org.neclipse.xtend.training.smallJava.formatting
+
