@@ -1,0 +1,36 @@
+grammar org.neclipse.xtext.training.smallfunc.SmallFuncDsl with org.eclipse.xtext.common.Terminals
+
+generate smallFuncDsl "http://www.neclipse.org/xtext/training/smallfunc/SmallFuncDsl"
+import "http://www.neclipse.org/xtext/training/smallJava/SmallJavaDsl" as smallJavaDsl
+
+Namespace:
+	'namespace' name=QName
+	imports+=Import*
+	function=SmallFunction;
+
+Import:
+	'import' importedNamespace=QNameWithWildcard;
+
+QName:
+	ID ('.' ID)*;
+
+QNameWithWildcard:
+	QName '.*'?;
+
+SmallFunction:
+	'def' name=ID '('params+=Param (',' params+=Param)*')' '{'
+	'}';
+
+Param:
+	dataType=DataType name=ID;
+
+DataType:
+	{DataType} BasicType | ClassType;
+
+BasicType:
+	'String' | 'boolean' | 'int' | 'long' | 'double';
+
+ClassType:
+	type=[smallJavaDsl::SmallClass|ID];
+
+
