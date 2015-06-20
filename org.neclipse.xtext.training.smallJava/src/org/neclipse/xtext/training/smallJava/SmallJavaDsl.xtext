@@ -32,3 +32,8 @@ BasicType:
 
 ClassType:
 	type=[SmallClass|ID];
+
+
+//Visibility:
+//	PUBLIC='public' | PRIVATE='private'
+//;
