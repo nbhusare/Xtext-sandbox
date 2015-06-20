@@ -1,0 +1,27 @@
+package org.neclipse.xcore.training.smallJava
+
+
+class Namespace {
+	String name
+	contains Import[] imports
+	refers SmallClass smallClass
+}
+
+class Import {
+	String qualifiedName
+}
+
+class SmallClass {
+	String name
+	refers SmallClass superClass
+	contains Attribute attribute
+}
+
+class Attribute {
+	String name
+	refers DataType dataType
+}
+
+class DataType {
+	String name
+}

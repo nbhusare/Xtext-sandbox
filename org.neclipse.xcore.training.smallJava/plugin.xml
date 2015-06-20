@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated smallJava -->
+      <package
+            uri="org.neclipse.xcore.training.smallJava"
+            class="org.neclipse.xcore.training.smallJava.SmallJavaPackage"
+            genModel="model/smallJava.xcore"/>
+   </extension>
+
+</plugin>
