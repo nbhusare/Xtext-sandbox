@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.nb.xtext.example.hyperlink.entitydsl.ui
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.nb.xtext.example.hyperlink.entitydsl.ui; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.nb.xtext.example.hyperlink.entitydsl;visibility:=reexport,
+ org.eclipse.xtext.ui,
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.ui.editors;bundle-version="3.5.0",
+ org.eclipse.ui.ide;bundle-version="3.5.0",
+ org.eclipse.ui,
+ org.eclipse.compare,
+ org.eclipse.xtext.builder,
+ org.eclipse.xtend.lib;resolution:=optional,
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.xtext.common.types.ui,
+ org.eclipse.xtext,
+ org.antlr.runtime
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.nb.xtext.example.hyperlink.entitydsl.ide.contentassist.antlr,
+ org.nb.xtext.example.hyperlink.entitydsl.ide.contentassist.antlr.internal,
+ org.nb.xtext.example.hyperlink.entitydsl.ui,
+ org.nb.xtext.example.hyperlink.entitydsl.ui.contentassist,
+ org.nb.xtext.example.hyperlink.entitydsl.ui.internal,
+ org.nb.xtext.example.hyperlink.entitydsl.ui.quickfix
+Bundle-Activator: org.nb.xtext.example.hyperlink.entitydsl.ui.internal.EntitydslActivator

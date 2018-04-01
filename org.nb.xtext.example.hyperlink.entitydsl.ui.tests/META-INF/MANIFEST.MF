@@ -1,0 +1,31 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.nb.xtext.example.hyperlink.entitydsl.ui.tests
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.nb.xtext.example.hyperlink.entitydsl.ui.tests; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.nb.xtext.example.hyperlink.entitydsl.ui,
+ org.junit;bundle-version="4.12.0",
+ org.eclipse.xtext.testing,
+ org.eclipse.xtext.xbase.testing,
+ org.eclipse.xtext.xbase.junit,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.workbench;resolution:=optional,
+ org.eclipse.xtext.ui.testing,
+ org.eclipse.core.resources,
+ org.eclipse.xtext.junit4,
+ org.eclipse.xtext.common.types.ui,
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.xtext.builder,
+ org.eclipse.xtext.common.types.shared,
+ org.eclipse.emf.ecore
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.nb.xtext.example.hyperlink.entitydsl.ui.tests;x-internal=true
+Import-Package: org.hamcrest.core,
+ org.junit;version="4.5.0",
+ org.junit.runners.model;version="4.5.0",
+ org.junit.runner;version="4.5.0",
+ org.junit.runners;version="4.5.0",
+ org.junit.runner.manipulation;version="4.5.0",
+ org.junit.runner.notification;version="4.5.0"

@@ -1,0 +1,17 @@
+grammar org.nb.xtext.example.hyperlink.entitydsl.EntityDsl with org.eclipse.xtext.common.Terminals
+
+generate entityDsl "http://www.nb.org/xtext/example/hyperlink/entitydsl/EntityDsl"
+
+EntityFile:
+	'namespace' name=QualifedName
+	imports+=Import*
+	entity=Entity;
+
+Import:
+	'import' importedNamespace=QualifedName;
+
+QualifedName:
+	ID ('.' ID)*;
+
+Entity:
+	'model' name=ID ('extends' parent=[Entity|ID])?;
