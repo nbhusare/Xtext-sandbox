@@ -14,13 +14,13 @@ import org.apache.log4j.Logger;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.text.Region;
-import org.eclipse.jface.text.hyperlink.IHyperlink;
 import org.eclipse.xtext.common.types.xtext.ui.TypeAwareHyperlinkHelper;
 import org.eclipse.xtext.naming.IQualifiedNameConverter;
 import org.eclipse.xtext.naming.QualifiedName;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.eclipse.xtext.resource.IEObjectDescription;
+import org.eclipse.xtext.resource.ILocationInFileProvider;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.hyperlinking.IHyperlinkAcceptor;
 import org.eclipse.xtext.util.ITextRegion;
@@ -28,8 +28,6 @@ import org.nb.xtext.example.hyperlink.entitydsl.entityDsl.EntityDslPackage;
 import org.nb.xtext.example.hyperlink.entitydsl.entityDsl.Import;
 import org.nb.xtext.example.hyperlink.entitydsl.index.EntityDslIndex;
 
-import com.google.common.collect.Iterables;
-import com.google.common.collect.Lists;
 import com.google.inject.Inject;
 
 /**
@@ -41,6 +39,9 @@ public class EntityDslHyperlinkHelper extends TypeAwareHyperlinkHelper {
 
 	@Inject
 	private IQualifiedNameConverter.DefaultImpl qNameConvertor;
+	
+	@Inject
+	private ILocationInFileProvider locationInFileProvider;
 
 	@Inject
 	private EntityDslIndex entityDslIndex;
@@ -65,9 +66,8 @@ public class EntityDslHyperlinkHelper extends TypeAwareHyperlinkHelper {
 	}
 
 	protected Optional<ITextRegion> getTextRegion(Import iImport, final int offset) {
-		final List<INode> nodes = NodeModelUtils.findNodesForFeature(iImport,
-				EntityDslPackage.Literals.IMPORT__IMPORTED_NAMESPACE);
-		return nodes.stream().map(INode::getTextRegion).filter(textRegion -> textRegion.contains(offset)).findFirst();
+		final ITextRegion significantTextRegion = locationInFileProvider.getSignificantTextRegion(iImport, EntityDslPackage.Literals.IMPORT__IMPORTED_NAMESPACE, 0);
+		return Optional.ofNullable(significantTextRegion);
 	}
 
 	private class ImportWrapper {
