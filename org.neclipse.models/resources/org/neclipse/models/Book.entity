@@ -1,6 +1,0 @@
-namespace org.neclipse.models
-
-Entity Book {
-	name : string
-	author : Author
-}

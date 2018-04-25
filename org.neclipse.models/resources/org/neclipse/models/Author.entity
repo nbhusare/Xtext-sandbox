@@ -1,6 +1,0 @@
-namespace org.neclipse.models
-
-Entity Author {
-	name : string
-	library : Library
-}
