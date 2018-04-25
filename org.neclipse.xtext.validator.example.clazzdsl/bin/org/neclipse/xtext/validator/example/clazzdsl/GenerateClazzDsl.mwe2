@@ -1,0 +1,69 @@
+module org.neclipse.xtext.validator.example.clazzdsl.GenerateClazzDsl
+
+import org.eclipse.xtext.xtext.generator.*
+import org.eclipse.xtext.xtext.generator.model.project.*
+
+var rootPath = ".."
+var sourceFolder =
+"/*******************************************************************************\r\n * Copyright (C) 2018 Neeraj Bhusare (https://nbhusare.github.io/)\r\n * All rights reserved. This program and the accompanying materials\r\n * are made available under the terms of the Eclipse Public License v1.0\r\n * which accompanies this distribution, and is available at\r\n * http://www.eclipse.org/legal/epl-v10.html\r\n*******************************************************************************/"
+
+Workflow {
+
+	component = XtextGenerator {
+		configuration = {
+			project = StandardProjectConfig {
+				baseName = "org.neclipse.xtext.validator.example.clazzdsl"
+				rootPath = rootPath
+				genericIde = {
+					name = "org.neclipse.xtext.validator.example.clazzdsl.ui"
+				}
+				eclipsePlugin = {
+					enabled = true
+				}
+				createEclipseMetaData = true
+			}
+			code = {
+				encoding = "UTF-8"
+				lineDelimiter = "\r\n"
+				fileHeader = sourceFolder
+			}
+		}
+
+		language = StandardLanguage {
+			name = "org.neclipse.xtext.validator.example.clazzdsl.ClazzDsl"
+			fileExtensions = "clazz"
+			serializer = {
+				generateStub = false
+			}
+
+			generator = {
+				generateStub = false
+			}
+
+			scopeProvider = {
+				generateStub = false
+			}
+
+			formatter = {
+				generateStub = false
+			}
+
+			labelProvider = {
+				generateStub = false
+			}
+
+			outline = {
+				generateStub = false
+			}
+
+			quickFixProvider = {
+				generateStub = false
+			}
+
+			contentAssist = {
+				generateStub = false
+			}
+
+		}
+	}
+}

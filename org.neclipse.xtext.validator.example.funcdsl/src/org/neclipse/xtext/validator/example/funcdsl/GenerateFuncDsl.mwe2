@@ -1,0 +1,77 @@
+module org.neclipse.xtext.validator.example.funcdsl.GenerateFuncDsl
+
+import org.eclipse.xtext.xtext.generator.*
+import org.eclipse.xtext.xtext.generator.model.project.*
+
+var rootPath = ".."
+var sourceFolder = 
+"/*******************************************************************************
+ * Copyright (C) 2018 Neeraj Bhusare (https://nbhusare.github.io/)
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+*******************************************************************************/"
+
+Workflow {
+	
+	component = XtextGenerator {
+		configuration = {
+			project = StandardProjectConfig {
+				baseName = "org.neclipse.xtext.validator.example.funcdsl"
+				rootPath = rootPath
+				genericIde = {
+					name = "org.neclipse.xtext.validator.example.funcdsl.ui"
+				}
+				eclipsePlugin = {
+					enabled = true
+				}
+				createEclipseMetaData = true
+			}
+			code = {
+				encoding = "UTF-8"
+				lineDelimiter = "\r\n"
+				fileHeader = sourceFolder
+			}
+		}
+		language = StandardLanguage {
+			name = "org.neclipse.xtext.validator.example.funcdsl.FuncDsl"
+			fileExtensions = "func"
+			
+			referencedResource = "platform:/resource/org.neclipse.xtext.validator.example.clazzdsl/model/generated/ClazzDsl.genmodel"
+
+			serializer = {
+				generateStub = false
+			}
+			
+			generator = {
+				generateStub = false
+			}
+
+			scopeProvider = {
+				generateStub = false
+			}
+
+			formatter = {
+				generateStub = false
+			}
+
+			labelProvider = {
+				generateStub = false
+			}
+
+			outline = {
+				generateStub = false
+			}
+
+			quickFixProvider = {
+				generateStub = false
+			}
+
+			contentAssist = {
+				generateStub = false
+			}
+			
+		}
+	}
+}

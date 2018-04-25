@@ -1,0 +1,41 @@
+/*******************************************************************************
+ * Copyright (C) 2018 Neeraj Bhusare (https://nbhusare.github.io/)
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+*******************************************************************************/
+grammar org.neclipse.xtext.validator.example.funcdsl.FuncDsl with org.eclipse.xtext.common.Terminals
+
+generate funcDsl "http://www.neclipse.org/xtext/validator/example/funcdsl/FuncDsl"
+import "http://www.neclipse.org/xtext/validator/example/clazzdsl/ClazzDsl" as clazz
+
+Namespace:
+	'namespace' name=QName
+	imports+=Import*
+	func=Func;
+
+Import:
+	'import' importedNamespace=QNameWithWildcard;
+
+QName:
+	ID ('.' ID)*;
+
+QNameWithWildcard:
+	QName '.*'?;
+
+Func:
+	'func' name=ID '(' params+=Param (',' params+=Param)* ')' '{'
+	'}';
+
+Param:
+	dataType=DataType name=ID;
+
+DataType:
+	{DataType} BasicType | ClassType;
+
+BasicType:
+	'String' | 'boolean' | 'int' | 'long' | 'double';
+
+ClassType:
+	type=[clazz::Clazz|ID];

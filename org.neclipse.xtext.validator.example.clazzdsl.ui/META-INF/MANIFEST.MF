@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.neclipse.xtext.validator.example.clazzdsl.ui
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.neclipse.xtext.validator.example.clazzdsl.ui; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.neclipse.xtext.validator.example.clazzdsl,
+ org.eclipse.xtext.ui,
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.ui.editors;bundle-version="3.5.0",
+ org.eclipse.ui.ide;bundle-version="3.5.0",
+ org.eclipse.ui,
+ org.eclipse.compare,
+ org.eclipse.xtext.builder,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types.ui,
+ org.eclipse.xtend.lib
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.neclipse.xtext.validator.example.clazzdsl.ui.contentassist,
+ org.neclipse.xtext.validator.example.clazzdsl.ide.contentassist.antlr.internal,
+ org.neclipse.xtext.validator.example.clazzdsl.ui.internal,
+ org.neclipse.xtext.validator.example.clazzdsl.ui.quickfix,
+ org.neclipse.xtext.validator.example.clazzdsl.ide.contentassist.antlr
+Bundle-Activator: org.neclipse.xtext.validator.example.clazzdsl.ui.internal.ClazzdslActivator
