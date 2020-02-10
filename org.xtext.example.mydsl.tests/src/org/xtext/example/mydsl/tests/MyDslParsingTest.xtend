@@ -86,19 +86,23 @@ class MyDslParsingTest {
 			Hello A!
 		''')
 		Assert.assertNotNull(resultA)
-		val resourceA = resourceSet.createResource(URI.createURI("resourceA.mydsl", false))
+		val resourceA = resourceSet.createResource(URI.createPlatformResourceURI("resourceA.mydsl", false))
 		resourceA.contents.add(resultA)
 		resourceA.save(Collections.emptyMap)
 
-		val resourceB = resourceSet.createResource(URI.createURI("resourceB.mydsl", false))
-		resourceB.load(new StringInputStream("Hello B from A!"), Collections.emptyMap)
+		val resultB = parseHelper.parse('''
+			Hello B from A!
+		''')
+		Assert.assertNotNull(resultB)
+		val resourceB = resourceSet.createResource(URI.createPlatformResourceURI("resourceB.mydsl", false))
+		resourceB.contents.add(resultB)
 		resourceB.save(Collections.emptyMap)
 
 		val resultC = parseHelper.parse('''
 			Hello C from B!
 		''')
 		Assert.assertNotNull(resultC)
-		val resourceC = resourceSet.createResource(URI.createURI("resourceC.mydsl", false))
+		val resourceC = resourceSet.createResource(URI.createPlatformResourceURI("resourceC.mydsl", false))
 		resourceC.contents.add(resultC)
 		resourceC.save(Collections.emptyMap)
 	}
