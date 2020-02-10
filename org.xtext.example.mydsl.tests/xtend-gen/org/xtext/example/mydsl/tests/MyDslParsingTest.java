@@ -36,7 +36,7 @@ public class MyDslParsingTest {
       final Greeting greetingA = FACTORY.createGreeting();
       greetingA.setName("A");
       modelA.getGreetings().add(greetingA);
-      final Resource resourceA = resourceSet.createResource(URI.createURI("resultA.mydsl", false));
+      final Resource resourceA = resourceSet.createResource(URI.createURI("resourceA.mydsl", false));
       resourceA.getContents().add(modelA);
       resourceA.save(Collections.<Object, Object>emptyMap());
       final Model modelB = FACTORY.createModel();
@@ -44,7 +44,7 @@ public class MyDslParsingTest {
       greetingB.setName("B");
       greetingB.setFrom(greetingA);
       modelB.getGreetings().add(greetingB);
-      final Resource resourceB = resourceSet.createResource(URI.createURI("resultB.mydsl", false));
+      final Resource resourceB = resourceSet.createResource(URI.createURI("resourceB.mydsl", false));
       resourceB.getContents().add(modelB);
       resourceB.save(Collections.<Object, Object>emptyMap());
       final Model modelC = FACTORY.createModel();
@@ -52,7 +52,7 @@ public class MyDslParsingTest {
       greetingC.setName("C");
       greetingC.setFrom(greetingB);
       modelC.getGreetings().add(greetingC);
-      final Resource resourceC = resourceSet.createResource(URI.createURI("resultC.mydsl", false));
+      final Resource resourceC = resourceSet.createResource(URI.createURI("resourceC.mydsl", false));
       resourceC.getContents().add(modelC);
       resourceC.save(Collections.<Object, Object>emptyMap());
     } catch (Throwable _e) {
@@ -64,15 +64,15 @@ public class MyDslParsingTest {
   public void simpleTest02() {
     try {
       final XtextResourceSet resourceSet = new XtextResourceSet();
-      final Resource resourceA = resourceSet.createResource(URI.createURI("resultA.mydsl", false));
+      final Resource resourceA = resourceSet.createResource(URI.createURI("resourceA.mydsl", false));
       StringInputStream _stringInputStream = new StringInputStream("Hello A!");
       resourceA.load(_stringInputStream, Collections.<Object, Object>emptyMap());
       resourceA.save(Collections.<Object, Object>emptyMap());
-      final Resource resourceB = resourceSet.createResource(URI.createURI("resultB.mydsl", false));
+      final Resource resourceB = resourceSet.createResource(URI.createURI("resourceB.mydsl", false));
       StringInputStream _stringInputStream_1 = new StringInputStream("Hello B from A!");
       resourceB.load(_stringInputStream_1, Collections.<Object, Object>emptyMap());
       resourceB.save(Collections.<Object, Object>emptyMap());
-      final Resource resourceC = resourceSet.createResource(URI.createURI("resultC.mydsl", false));
+      final Resource resourceC = resourceSet.createResource(URI.createURI("resourceC.mydsl", false));
       StringInputStream _stringInputStream_2 = new StringInputStream("Hello C from B!");
       resourceC.load(_stringInputStream_2, Collections.<Object, Object>emptyMap());
       resourceC.save(Collections.<Object, Object>emptyMap());
@@ -93,10 +93,10 @@ public class MyDslParsingTest {
       _builder.newLine();
       final Model resultA = this.parseHelper.parse(_builder);
       Assert.assertNotNull(resultA);
-      final Resource resourceA = resourceSet.createResource(URI.createURI("resultA.mydsl", false));
+      final Resource resourceA = resourceSet.createResource(URI.createURI("resourceA.mydsl", false));
       resourceA.getContents().add(resultA);
       resourceA.save(Collections.<Object, Object>emptyMap());
-      final Resource resourceB = resourceSet.createResource(URI.createURI("resultB.mydsl", false));
+      final Resource resourceB = resourceSet.createResource(URI.createURI("resourceB.mydsl", false));
       StringInputStream _stringInputStream = new StringInputStream("Hello B from A!");
       resourceB.load(_stringInputStream, Collections.<Object, Object>emptyMap());
       resourceB.save(Collections.<Object, Object>emptyMap());
@@ -105,7 +105,7 @@ public class MyDslParsingTest {
       _builder_1.newLine();
       final Model resultC = this.parseHelper.parse(_builder_1);
       Assert.assertNotNull(resultC);
-      final Resource resourceC = resourceSet.createResource(URI.createURI("resultC.mydsl", false));
+      final Resource resourceC = resourceSet.createResource(URI.createURI("resourceC.mydsl", false));
       resourceC.getContents().add(resultC);
       resourceC.save(Collections.<Object, Object>emptyMap());
     } catch (Throwable _e) {

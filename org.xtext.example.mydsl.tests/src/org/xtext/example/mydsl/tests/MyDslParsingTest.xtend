@@ -33,7 +33,7 @@ class MyDslParsingTest {
 		val greetingA = FACTORY.createGreeting
 		greetingA.name = "A"
 		modelA.greetings.add(greetingA)
-		val resourceA = resourceSet.createResource(URI.createURI("resultA.mydsl", false))
+		val resourceA = resourceSet.createResource(URI.createURI("resourceA.mydsl", false))
 		resourceA.contents.add(modelA)
 		resourceA.save(Collections.emptyMap)
 
@@ -43,7 +43,7 @@ class MyDslParsingTest {
 		greetingB.name = "B"
 		greetingB.from = greetingA
 		modelB.greetings.add(greetingB)
-		val resourceB = resourceSet.createResource(URI.createURI("resultB.mydsl", false))
+		val resourceB = resourceSet.createResource(URI.createURI("resourceB.mydsl", false))
 		resourceB.contents.add(modelB)
 		resourceB.save(Collections.emptyMap)
 
@@ -53,7 +53,7 @@ class MyDslParsingTest {
 		greetingC.name = "C"
 		greetingC.from = greetingB
 		modelC.greetings.add(greetingC)
-		val resourceC = resourceSet.createResource(URI.createURI("resultC.mydsl", false))
+		val resourceC = resourceSet.createResource(URI.createURI("resourceC.mydsl", false))
 		resourceC.contents.add(modelC)
 		resourceC.save(Collections.emptyMap)
 	}
@@ -62,15 +62,15 @@ class MyDslParsingTest {
 	def void simpleTest02() {
 		val resourceSet = new XtextResourceSet
 
-		val resourceA = resourceSet.createResource(URI.createURI("resultA.mydsl", false))
+		val resourceA = resourceSet.createResource(URI.createURI("resourceA.mydsl", false))
 		resourceA.load(new StringInputStream("Hello A!"), Collections.emptyMap)
 		resourceA.save(Collections.emptyMap)
 
-		val resourceB = resourceSet.createResource(URI.createURI("resultB.mydsl", false))
+		val resourceB = resourceSet.createResource(URI.createURI("resourceB.mydsl", false))
 		resourceB.load(new StringInputStream("Hello B from A!"), Collections.emptyMap)
 		resourceB.save(Collections.emptyMap)
 
-		val resourceC = resourceSet.createResource(URI.createURI("resultC.mydsl", false))
+		val resourceC = resourceSet.createResource(URI.createURI("resourceC.mydsl", false))
 		resourceC.load(new StringInputStream("Hello C from B!"), Collections.emptyMap)
 		resourceC.save(Collections.emptyMap)
 	}
@@ -86,11 +86,11 @@ class MyDslParsingTest {
 			Hello A!
 		''')
 		Assert.assertNotNull(resultA)
-		val resourceA = resourceSet.createResource(URI.createURI("resultA.mydsl", false))
+		val resourceA = resourceSet.createResource(URI.createURI("resourceA.mydsl", false))
 		resourceA.contents.add(resultA)
 		resourceA.save(Collections.emptyMap)
 
-		val resourceB = resourceSet.createResource(URI.createURI("resultB.mydsl", false))
+		val resourceB = resourceSet.createResource(URI.createURI("resourceB.mydsl", false))
 		resourceB.load(new StringInputStream("Hello B from A!"), Collections.emptyMap)
 		resourceB.save(Collections.emptyMap)
 
@@ -98,7 +98,7 @@ class MyDslParsingTest {
 			Hello C from B!
 		''')
 		Assert.assertNotNull(resultC)
-		val resourceC = resourceSet.createResource(URI.createURI("resultC.mydsl", false))
+		val resourceC = resourceSet.createResource(URI.createURI("resourceC.mydsl", false))
 		resourceC.contents.add(resultC)
 		resourceC.save(Collections.emptyMap)
 	}
