@@ -86,7 +86,7 @@ class MyDslParsingTest {
 			Hello A!
 		''')
 		Assert.assertNotNull(resultA)
-		val resourceA = resourceSet.createResource(URI.createPlatformResourceURI("resourceA.mydsl", false))
+		val resourceA = resourceSet.createResource(URI.createURI("resourceA.mydsl", false))
 		resourceA.contents.add(resultA)
 		resourceA.save(Collections.emptyMap)
 
@@ -94,7 +94,7 @@ class MyDslParsingTest {
 			Hello B from A!
 		''')
 		Assert.assertNotNull(resultB)
-		val resourceB = resourceSet.createResource(URI.createPlatformResourceURI("resourceB.mydsl", false))
+		val resourceB = resourceSet.createResource(URI.createURI("resourceB.mydsl", false))
 		resourceB.contents.add(resultB)
 		resourceB.save(Collections.emptyMap)
 
@@ -102,7 +102,7 @@ class MyDslParsingTest {
 			Hello C from B!
 		''')
 		Assert.assertNotNull(resultC)
-		val resourceC = resourceSet.createResource(URI.createPlatformResourceURI("resourceC.mydsl", false))
+		val resourceC = resourceSet.createResource(URI.createURI("resourceC.mydsl", false))
 		resourceC.contents.add(resultC)
 		resourceC.save(Collections.emptyMap)
 	}

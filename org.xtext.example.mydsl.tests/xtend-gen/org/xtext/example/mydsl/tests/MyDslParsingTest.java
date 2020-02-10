@@ -93,7 +93,7 @@ public class MyDslParsingTest {
       _builder.newLine();
       final Model resultA = this.parseHelper.parse(_builder);
       Assert.assertNotNull(resultA);
-      final Resource resourceA = resourceSet.createResource(URI.createPlatformResourceURI("resourceA.mydsl", false));
+      final Resource resourceA = resourceSet.createResource(URI.createURI("resourceA.mydsl", false));
       resourceA.getContents().add(resultA);
       resourceA.save(Collections.<Object, Object>emptyMap());
       StringConcatenation _builder_1 = new StringConcatenation();
@@ -101,7 +101,7 @@ public class MyDslParsingTest {
       _builder_1.newLine();
       final Model resultB = this.parseHelper.parse(_builder_1);
       Assert.assertNotNull(resultB);
-      final Resource resourceB = resourceSet.createResource(URI.createPlatformResourceURI("resourceB.mydsl", false));
+      final Resource resourceB = resourceSet.createResource(URI.createURI("resourceB.mydsl", false));
       resourceB.getContents().add(resultB);
       resourceB.save(Collections.<Object, Object>emptyMap());
       StringConcatenation _builder_2 = new StringConcatenation();
@@ -109,7 +109,7 @@ public class MyDslParsingTest {
       _builder_2.newLine();
       final Model resultC = this.parseHelper.parse(_builder_2);
       Assert.assertNotNull(resultC);
-      final Resource resourceC = resourceSet.createResource(URI.createPlatformResourceURI("resourceC.mydsl", false));
+      final Resource resourceC = resourceSet.createResource(URI.createURI("resourceC.mydsl", false));
       resourceC.getContents().add(resultC);
       resourceC.save(Collections.<Object, Object>emptyMap());
     } catch (Throwable _e) {
